@@ -53,7 +53,7 @@ pip install -r requirements.txt
 ```python
 fb_app = firebase_admin.initialize_app(
     cred, {
-        "storageBucket": "swe-store.appspot.com"
+        "storageBucket": "<your-project>.appspot.com"
     }
 )
 ```
