@@ -6,7 +6,7 @@ __pycache__/
 flask_session/
 .DS_Store
 content/
-service-account-key.json
+firebase.json
 
 # C extensions
 *.so
