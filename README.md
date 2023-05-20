@@ -4,6 +4,7 @@ This project is a simple online store made for Software Engineering Fundamentals
 
 - [Online Store](#online-store)
   - [Project Components](#project-components)
+  - [Technology Stack](#technology-stack)
   - [How to run](#how-to-run)
   - [Screenshots](#screenshots)
     - [Home](#home)
@@ -27,6 +28,13 @@ This project is a simple online store made for Software Engineering Fundamentals
   - Register screen
 - Admin panel: For managing and adding products
 - API: To enable the front-end to communicate with the backend
+
+## Technology Stack
+- Flask (Python)
+- Firebase (Firestore, Storage)
+- Bootstrap (HTML, CSS, JS)
+- Jinja2 (Templating)
+- Git (Version Control)
 
 ## How to run
 
