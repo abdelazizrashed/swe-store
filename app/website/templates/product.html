@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Checkout example for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+    <link rel="stylesheet" href="static/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup.css">
+    <link rel="stylesheet" href="/static/css/jquery-ui.css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="/static/css/aos.css">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="/static/css/product.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    {% from 'macros.html' import header%}
+    {{header(0)}}
+    <div class="container">
+        <form id="product-create" action="/api/product/create" method="POST" enctype="multipart/form-data" onsubmit="
+            // var name = $('#product-name').val(); 
+            // if(!name){
+            //     alert('Name is required');
+            //     return;
+            // }
+            // var price = $('#product-price').val();
+            // if(!price){
+            //     alert('Price is required');
+            //     return;
+            // }
+            // var description = $('#product-description').val();
+            // if(!description){
+            //     alert('Description is required');
+            //     return;
+            // }
+            // var image = $('#product-img').val();
+            // console.log(image);
+            // if(!image){
+            //     alert('Image is required');
+            //     return;
+            // }
+            // console.log(name, price, description, image);
+            ">
+            <div class="form-group">
+                <label for="product-name">Product name</label>
+                <input required type="name" name="name" class="form-control" id="product-name"
+                    aria-describedby="emailHelp" value="{{product['name']}}" placeholder="Enter product name">
+            </div>
+            <div class="form-group">
+                <label for="product-price">Product price (EGP)</label>
+                <input required type="number" name="price" class="form-control" id="product-price"
+                    aria-describedby="emailHelp" value="{{product['price']}}" placeholder="Enter product price">
+            </div>
+            <div class="form-group">
+                <label for="product-description">Product Description</label>
+                <textarea required class="form-control" name="description" id="product-description"
+                    rows="3">{{product['description']}}</textarea>
+            </div>
+            <img src="{{product['image']}}" alt="">
+            <div class="form-group">
+                <label for="product-img">Product Image</label>
+                <input required type="file" name="image" class="form-control-file" id="product-img">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/jquery-ui.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/jquery.magnific-popup.min.js"></script>
+    <script src="/static/js/aos.js"></script>
+
+    <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

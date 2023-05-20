@@ -1,0 +1,39 @@
+{% macro header(cart) -%}
+<header class="site-navbar" role="banner">
+    <div class="site-navbar-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+                </div>
+                <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+                    <div class="site-logo">
+                        <a href="/" class="js-logo-clone">Shoppers</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 order-3 order-md-3 text-right">
+                    <div class="site-top-icons">
+                        <ul>
+
+                            <li><a
+                                    onclick="$.get('/api/logout').done((data)=>{sessionStorage.clear();window.location.href = '/login';})"><i
+                                        class="fa-solid fa-right-from-bracket"></i></a></li>
+                            <li>
+                                <a onclick="var id = sessionStorage.getItem('id'); if (id == null){window.location.href='/login'}else{window.location.href='/cart'}"
+                                    class="site-cart">
+                                    <span class="icon icon-shopping_cart"></span>
+                                    {% if cart > 0 %}
+                                    <span class="count">{{cart}}</span>
+                                    {% endif %}
+                                </a>
+                            </li>
+                            <li class="d-inline-block d-md-none ml-md-0"><a href="#"
+                                    class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+{%- endmacro %}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <section>
+        <div class="sidebar">
+            <h1 class="logo">M-SoftTech</h1>
+
+            <ul class="nav">
+                <li class="active"><a href="/dashboard"><i class="fa fa-windows"></i> Products</a></li>
+                <!-- <li><a href="/dashboard/users"><i class="fa fa-shopping-bag"></i> Users</a></li> -->
+
+            </ul>
+
+        </div>
+        <div class="main">
+
+            <div class="head-section">
+                <div class="col-6">
+                    <h2>Product</h2>
+                    <p>{{products|length}} products found</p>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="content">
+                <p>All products</p>
+                <br>
+                <br>
+                <a href="/dashboard/product"> Create</a>
+
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <!-- <th scope="col" width="50px">ID</th> -->
+                            <th scope="col" width="100px">Name</th>
+                            <th scope="col" width="290px">Description</th>
+                            <th scope="col">Price</th>
+                            <th scope="col" width="70px">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                        <tr>
+                            <!-- <td data-label="Account">{{product["id"]}}</td> -->
+                            <td data-label="Due Date"><img src="{{product['image']}}" class="tab-img"></td>
+                            <td data-label="Amount">{{product["description"]}}</td>
+                            <td data-label="Due Date">{{product["price"]}} EGP</td>
+                            <!-- <td data-label="Amount" style="position: relative;"><span class="pe"></span>Pending</td> -->
+                            <td data-label="Period">
+                                <!-- <a href="/dashboard/product?id={{product['id']}}">
+                                    <i class="fa fa-edit ticon "></i>
+                                </a> -->
+                                <!-- <i class="fa fa-gear ticon"></i> -->
+                                <a href="/api/product/delete?id={{product['id']}}">
+
+                                    <i class="fa fa-cancel ticon" style="color:red;">X</i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".user").click(function () {
+                $(".profile-div").toggle(1000);
+            });
+            $(".hicon:nth-child(1)").click(function () {
+                $(".notification-div").toggle(1000);
+            });
+            $(".sicon").click(function () {
+                $(".search").toggle(1000);
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $('li').click(function () {
+            $('li').removeClass("active");
+            $(this).addClass("active");
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
