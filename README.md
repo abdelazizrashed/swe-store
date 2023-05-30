@@ -36,7 +36,7 @@ This project is a simple online store made for Software Engineering Fundamentals
 - Jinja2 (Templating)
 - Git (Version Control)
 
-## How to run
+## How to run :
 
 1. Clone the repository
 ```bash
